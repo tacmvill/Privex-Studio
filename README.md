@@ -1,4 +1,4 @@
-<img width="1917" height="1016" alt="image" src="https://github.com/user-attachments/assets/92c2acd7-9282-4036-8bc3-3032a405a459" /># Privex Studio
+# Privex Studio
 
 Privex Studio est un logiciel Windows de montage et de masquage de vidéos et d’images. Il permet de choisir les sujets à protéger, de suivre leurs déplacements et d’exporter le résultat depuis une interface locale.
 
