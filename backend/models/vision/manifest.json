@@ -1,0 +1,38 @@
+[
+  {
+    "id": "yolo26n",
+    "architecture": "YOLO26 COCO detection",
+    "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n.pt",
+    "code_version": "8.4.177",
+    "code_license": "AGPL-3.0-or-enterprise",
+    "weights_license": "AGPL-3.0-or-enterprise",
+    "license_source": "https://docs.ultralytics.com/models/yolo26/",
+    "checkpoint_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+    "onnx_sha256": "fc356fcb61dde38d380d86aa47bc4e6d197973f3aa889415222fab4e5b668cc6",
+    "file": "yolo26n.onnx",
+    "export": {
+      "size": 640,
+      "opset": 17,
+      "end2end": false,
+      "precision": "float32"
+    }
+  },
+  {
+    "id": "yolo26s",
+    "architecture": "YOLO26 COCO detection",
+    "source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26s.pt",
+    "code_version": "8.4.177",
+    "code_license": "AGPL-3.0-or-enterprise",
+    "weights_license": "AGPL-3.0-or-enterprise",
+    "license_source": "https://docs.ultralytics.com/models/yolo26/",
+    "checkpoint_sha256": "646f8bc3fe0a656803d95c294f7852321748cb29d13466a1af8862e2db384a1b",
+    "onnx_sha256": "e1e01a52a92bfc1c1c99a672d681c618dbeb135a9025d115c181f484d47afa8c",
+    "file": "yolo26s.onnx",
+    "export": {
+      "size": 640,
+      "opset": 17,
+      "end2end": false,
+      "precision": "float32"
+    }
+  }
+]

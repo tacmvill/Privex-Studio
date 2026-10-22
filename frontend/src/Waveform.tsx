@@ -1,0 +1,16 @@
+import {useEffect,useLayoutEffect,useRef,useState} from 'react';
+type AudioData={has_audio:boolean;peaks:number[];rms?:number[];spectrum?:number[][];duration:number};
+const cache=new Map<string,AudioData>();
+export function Waveform({mediaId,start=0,end}:{mediaId:string;start?:number;end?:number}){
+ const [data,setData]=useState(cache.get(mediaId)),[error,setError]=useState(false),canvas=useRef<HTMLCanvasElement>(null);
+ useEffect(()=>{setData(cache.get(mediaId));setError(false);if(cache.has(mediaId))return;const abort=new AbortController();fetch(`/api/montage/${mediaId}/waveform`,{signal:abort.signal}).then(async r=>{if(!r.ok)throw Error();return r.json()}).then(v=>{cache.set(mediaId,v);if(cache.size>12)cache.delete(cache.keys().next().value!);setData(v)}).catch(e=>{if(e.name!=='AbortError')setError(true)});return()=>abort.abort()},[mediaId]);
+ useLayoutEffect(()=>{const el=canvas.current;if(!el||!data?.has_audio)return;
+ const paint=()=>{const width=Math.max(1,Math.min(8192,Math.round(el.clientWidth*devicePixelRatio))),height=Math.max(1,Math.round(el.clientHeight*devicePixelRatio));el.width=width;el.height=height;const ctx=el.getContext('2d');if(!ctx)return;
+ const first=Math.floor(start/data.duration*data.peaks.length),last=Math.max(first+1,Math.ceil((end??data.duration)/data.duration*data.peaks.length));
+ const upper:number[]=[],lower:number[]=[];for(let x=0;x<width;x++){const a=Math.max(0,first+Math.floor(x/width*(last-first))),b=Math.min(data.peaks.length,Math.max(a+1,first+Math.ceil((x+1)/width*(last-first))));let peak=0,rms=0;for(let i=a;i<b;i++){peak=Math.max(peak,data.peaks[i]);rms=Math.max(rms,data.rms?.[i]??0)}upper.push(Math.min(1,peak));lower.push(Math.min(1,rms));
+ const spectrum=data.spectrum?.[Math.min(data.peaks.length-1,a)];if(spectrum){const sh=Math.max(1,Math.floor(height*.72));for(let sy=0;sy<sh;sy++){const low=Math.max(0,Math.floor((1-(sy+1)/sh)*spectrum.length)),high=Math.min(spectrum.length,Math.ceil((1-sy/sh)*spectrum.length));let v=0;for(let band=low;band<high;band++)v=Math.max(v,spectrum[band]/255);if(v<.05)continue;ctx.fillStyle=`rgba(${Math.round(v>.7?160+(v-.7)*300:35)},${Math.round(90+v*140)},${Math.round(v>.7?160-(v-.7)*350:120+v*110)},${Math.min(1,v*1.3)})`;ctx.fillRect(x,sy,1,1)}}}
+ const envelope=(values:number[],opacity:number)=>{ctx.beginPath();values.forEach((v,x)=>{const y=height*.85-v*height*.14;x?ctx.lineTo(x,y):ctx.moveTo(x,y)});for(let x=values.length-1;x>=0;x--)ctx.lineTo(x,height*.85+values[x]*height*.14);ctx.closePath();ctx.fillStyle=`rgba(137,238,204,${opacity})`;ctx.fill()};envelope(upper,.25);envelope(lower,.65);ctx.strokeStyle='#c5ffea80';ctx.lineWidth=1;ctx.beginPath();upper.forEach((v,x)=>{const y=height*.85-v*height*.14;x?ctx.lineTo(x,y):ctx.moveTo(x,y)});ctx.stroke();
+ };paint();const observer=new ResizeObserver(paint);observer.observe(el);return()=>observer.disconnect();},[data,start,end]);
+ if(!data)return <span className="waveform-note">{error?'Analyse audio indisponible':'Analyse du son…'}</span>;if(!data.has_audio)return <span className="waveform-note">Sans piste audio</span>;
+ return <canvas ref={canvas} className="audio-waveform audio-spectrum" aria-label="Spectrogramme FFT du son et enveloppes de crête et RMS"/>;
+}

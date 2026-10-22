@@ -1,0 +1,23 @@
+# Local dependencies and compiled packages
+.venv/
+.ai-venv/
+node_modules/
+frontend/dist/
+build/
+dist/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+# Personal media, projects, caches and credentials
+backend/data/
+*.log
+.env
+.env.*
+!.env.example
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.zip
+.DS_Store
+Thumbs.db
