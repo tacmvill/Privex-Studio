@@ -10,6 +10,12 @@ Ce projet personnel étudiant a une vocation expérimentale, technologique et p�
 
 Le projet est présenté sans affiliation politique, sans soutien à une cause, un parti ou un mouvement particulier. Les éventuelles scènes de manifestations servent uniquement à illustrer les fonctions de traitement vidéo. Leur présence ne traduit aucune adhésion.
 
+## Auteur
+
+Théo-Alexandre VILLAND, étudiant à l'ECE Paris
+Linkedin : https://www.linkedin.com/in/theo-alexandre-villand/
+
+
 ## Fonctions
 
 - Importer une vidéo ou une image et ajuster les passages conservés dans la timeline.
@@ -63,8 +69,4 @@ Les vidéos personnelles, les projets enregistrés, les environnements Python, l
 
 ## Sources et droits
 
-Le traitement s’appuie sur des modèles de vision préexistants et des bibliothèques tierces. Leur provenance et leurs conditions propres sont décrites dans [docs/SOURCES.md](docs/SOURCES.md) et [docs/RESSOURCES-APPLE.md](docs/RESSOURCES-APPLE.md). Le dépôt conserve les polices, SF Symbols et ressources du kit Apple utilisés par l’interface, conformément au choix de son propriétaire pour son dépôt privé.
-
-Les licences des composants et médias restent applicables ; ce README n’accorde pas de droit supplémentaire sur ces ressources. Aucune licence globale de redistribution du projet n’est accordée par ce document. Utiliser uniquement des médias que l’on est autorisé à traiter et partager. Les enregistrements personnels, musiques et voix de la publicité ne sont pas inclus.
-
-L’inférence vidéo est locale. L’installation des dépendances et la préparation de modèles optionnels nécessitent une connexion Internet.
+Le traitement s’appuie sur des modèles de vision préexistants et des bibliothèques tierces. Leur provenance et leurs conditions propres sont décrites dans [docs/SOURCES.md](docs/SOURCES.md) et [docs/RESSOURCES-APPLE.md](docs/RESSOURCES-APPLE.md). Le dépôt conserve les polices, SF Symbols et ressources du kit Apple utilisés par l’interface.
