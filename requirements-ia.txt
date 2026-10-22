@@ -1,0 +1,8 @@
+torch==2.14.1
+torchvision==0.29.1
+transformers==5.19.0
+huggingface-hub==2.2.0
+lap==0.5.13
+requests==2.34.2
+ultralytics-thop==2.2.2
+onnx==1.23.2

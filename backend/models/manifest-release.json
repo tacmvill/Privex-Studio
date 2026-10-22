@@ -1,0 +1,52 @@
+[
+  {
+    "file": "advanced/yolo26n-reid.onnx",
+    "bytes": 9873245,
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb"
+  },
+  {
+    "file": "det_10g.onnx",
+    "bytes": 16923827,
+    "sha256": "5838f7fe053675b1c7a08b633df49e7af5495cee0493c7dcf6697200b85b5b91"
+  },
+  {
+    "file": "face_detection_yunet_2023mar.onnx",
+    "bytes": 232589,
+    "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+  },
+  {
+    "file": "head_detector.onnx",
+    "bytes": 12238518,
+    "sha256": "905b086b43dd900e657c1c26ccff8f136de5d1ad198e23ffe96371d525dd6c05"
+  },
+  {
+    "file": "open-vocabulary.onnx",
+    "bytes": 40544873,
+    "sha256": "656196bcdae4446bc2c0a6e34cae78cc5384145559a045bbb2f1a5ddf940356a"
+  },
+  {
+    "file": "vision/yolo26n.onnx",
+    "bytes": 9884242,
+    "sha256": "fc356fcb61dde38d380d86aa47bc4e6d197973f3aa889415222fab4e5b668cc6"
+  },
+  {
+    "file": "vision/yolo26s.onnx",
+    "bytes": 38233233,
+    "sha256": "e1e01a52a92bfc1c1c99a672d681c618dbeb135a9025d115c181f484d47afa8c"
+  },
+  {
+    "file": "yolo11n-seg.onnx",
+    "bytes": 11719715,
+    "sha256": "19bdc3dad36dbcfe10530241a5734616c5ae6673ec42af1c34147ddcdc7c0114"
+  },
+  {
+    "file": "yolo11n.onnx",
+    "bytes": 10701975,
+    "sha256": "005c38e8de77ef315bbec7ceef0397b990ad7caea1278ea3098a77117e12ac29"
+  },
+  {
+    "file": "yolox_plates_s.onnx",
+    "bytes": 35753707,
+    "sha256": "f9302f8c9a951861cf5e1266951d3962ce299b6636e73fa32032ffe38fe90ee7"
+  }
+]
