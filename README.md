@@ -16,7 +16,6 @@ Privex Studio est un logiciel Windows de montage et de masquage de vidéos et d�
 
 Ce projet personnel étudiant a une vocation expérimentale, technologique et pédagogique. Il est en cours de développement. Il ne constitue pas une solution d’anonymisation certifiée.
 
-Le projet est présenté sans affiliation politique, sans soutien à une cause, un parti ou un mouvement particulier. Les éventuelles scènes de manifestations servent uniquement à illustrer les fonctions de traitement vidéo. Leur présence ne traduit aucune adhésion.
 
 ## Auteur
 
